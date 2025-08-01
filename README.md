@@ -42,7 +42,7 @@ webathon1/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/f1-racing-experience.git
+   git clone https://github.com/dipesh07-ui/f1-racing-experience.git
    cd f1-racing-experience
    ```
 
@@ -102,7 +102,7 @@ The website is fully responsive and works on:
 
 ## 🌐 Live Demo
 
-Visit the live website: [F1 Racing Experience](https://yourusername.github.io/f1-racing-experience)
+Visit the live website: [F1 Racing Experience](https://dipesh07-ui.github.io/f1-racing-experience)
 
 ## 👥 Team
 
@@ -112,7 +112,7 @@ Visit the live website: [F1 Racing Experience](https://yourusername.github.io/f1
 ## 📧 Contact
 
 - Email: guptadipesh776@gmail.com
-- GitHub: [Your GitHub Profile]
+- GitHub: [dipesh07-ui](https://github.com/dipesh07-ui)
 
 ## 📄 License
 
