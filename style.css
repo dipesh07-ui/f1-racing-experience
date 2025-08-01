@@ -183,24 +183,15 @@ h2 {
     line-height: 1.8;
 }
 
-/* HOME WITH DYNAMIC RACING BACKGROUND */
+/* HOME WITH ULTRA-MODERN F1 RACING BACKGROUND */
 .hero {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%, #0a0a0a 100%);
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(225, 6, 0, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(0, 212, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(255, 165, 0, 0.15) 0%, transparent 70%),
+        linear-gradient(135deg, #000000 0%, #0a0a0a 15%, #1a1a1a 30%, #2a2a2a 50%, #1a1a1a 70%, #0a0a0a 85%, #000000 100%);
     position: relative;
     overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(225, 6, 0, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(255, 165, 0, 0.1) 0%, transparent 50%);
     animation: backgroundPulse 8s ease-in-out infinite;
 }
 
@@ -213,123 +204,103 @@ h2 {
     z-index: 1;
 }
 
-/* Racing Track Lines */
-.parallax-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        repeating-linear-gradient(
-            90deg,
-            transparent 0px,
-            transparent 40px,
-            rgba(225, 6, 0, 0.1) 40px,
-            rgba(225, 6, 0, 0.1) 80px
-        );
-    animation: trackMove 3s linear infinite;
-}
-
-/* Speed Lines */
-.parallax-bg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        repeating-linear-gradient(
-            45deg,
-            transparent 0px,
-            transparent 20px,
-            rgba(255, 255, 255, 0.05) 20px,
-            rgba(255, 255, 255, 0.05) 40px
-        );
-    animation: speedLines 2s linear infinite;
-}
-
 .car-image {
     position: absolute;
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.2;
-    animation: parallaxFloat 20s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px rgba(225, 6, 0, 0.5));
+    opacity: 0.4;
+    animation: parallaxFloat 12s ease-in-out infinite;
+    filter: drop-shadow(0 0 25px rgba(225, 6, 0, 0.8));
+    border-radius: 30px;
+    transform-origin: center;
 }
 
 .car1 {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150"><rect width="300" height="150" fill="none"/><path d="M50 75 L250 75 L270 60 L280 75 L270 90 L250 75 M80 60 L80 90 M220 60 L220 90" stroke="%23e10600" stroke-width="3" fill="none"/><circle cx="90" cy="75" r="15" fill="%23333"/><circle cx="210" cy="75" r="15" fill="%23333"/></svg>');
-    top: 20%;
-    left: 10%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="none"/><path d="M30 100 L370 100 L390 85 L400 100 L390 115 L370 100" stroke="%23e10600" stroke-width="6" fill="none"/><path d="M50 85 L50 115 M350 85 L350 115" stroke="%23e10600" stroke-width="4" fill="none"/><circle cx="80" cy="100" r="25" fill="%23222" stroke="%23e10600" stroke-width="3"/><circle cx="320" cy="100" r="25" fill="%23222" stroke="%23e10600" stroke-width="3"/><rect x="150" y="90" width="100" height="20" fill="%23e10600" opacity="0.9"/><rect x="140" y="85" width="120" height="30" fill="none" stroke="%23e10600" stroke-width="2" rx="5"/><circle cx="80" cy="100" r="8" fill="%23e10600"/><circle cx="320" cy="100" r="8" fill="%23e10600"/></svg>');
+    top: 15%;
+    left: 5%;
     animation-delay: 0s;
 }
 
 .car2 {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150"><rect width="300" height="150" fill="none"/><path d="M50 75 L250 75 L270 60 L280 75 L270 90 L250 75 M80 60 L80 90 M220 60 L220 90" stroke="%2300d4aa" stroke-width="3" fill="none"/><circle cx="90" cy="75" r="15" fill="%23333"/><circle cx="210" cy="75" r="15" fill="%23333"/></svg>');
-    top: 60%;
-    right: 15%;
-    animation-delay: -5s;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="none"/><path d="M30 100 L370 100 L390 85 L400 100 L390 115 L370 100" stroke="%2300d4aa" stroke-width="6" fill="none"/><path d="M50 85 L50 115 M350 85 L350 115" stroke="%2300d4aa" stroke-width="4" fill="none"/><circle cx="80" cy="100" r="25" fill="%23222" stroke="%2300d4aa" stroke-width="3"/><circle cx="320" cy="100" r="25" fill="%23222" stroke="%2300d4aa" stroke-width="3"/><rect x="150" y="90" width="100" height="20" fill="%2300d4aa" opacity="0.9"/><rect x="140" y="85" width="120" height="30" fill="none" stroke="%2300d4aa" stroke-width="2" rx="5"/><circle cx="80" cy="100" r="8" fill="%2300d4aa"/><circle cx="320" cy="100" r="8" fill="%2300d4aa"/></svg>');
+    top: 65%;
+    right: 10%;
+    animation-delay: -3s;
 }
 
 .car3 {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150"><rect width="300" height="150" fill="none"/><path d="M50 75 L250 75 L270 60 L280 75 L270 90 L250 75 M80 60 L80 90 M220 60 L220 90" stroke="%23ffa500" stroke-width="3" fill="none"/><circle cx="90" cy="75" r="15" fill="%23333"/><circle cx="210" cy="75" r="15" fill="%23333"/></svg>');
-    top: 40%;
-    left: 60%;
-    animation-delay: -10s;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="none"/><path d="M30 100 L370 100 L390 85 L400 100 L390 115 L370 100" stroke="%23ffa500" stroke-width="6" fill="none"/><path d="M50 85 L50 115 M350 85 L350 115" stroke="%23ffa500" stroke-width="4" fill="none"/><circle cx="80" cy="100" r="25" fill="%23222" stroke="%23ffa500" stroke-width="3"/><circle cx="320" cy="100" r="25" fill="%23222" stroke="%23ffa500" stroke-width="3"/><rect x="150" y="90" width="100" height="20" fill="%23ffa500" opacity="0.9"/><rect x="140" y="85" width="120" height="30" fill="none" stroke="%23ffa500" stroke-width="2" rx="5"/><circle cx="80" cy="100" r="8" fill="%23ffa500"/><circle cx="320" cy="100" r="8" fill="%23ffa500"/></svg>');
+    top: 35%;
+    left: 55%;
+    animation-delay: -6s;
 }
 
 .car4 {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150"><rect width="300" height="150" fill="none"/><path d="M50 75 L250 75 L270 60 L280 75 L270 90 L250 75 M80 60 L80 90 M220 60 L220 90" stroke="%23667eea" stroke-width="3" fill="none"/><circle cx="90" cy="75" r="15" fill="%23333"/><circle cx="210" cy="75" r="15" fill="%23333"/></svg>');
-    top: 80%;
-    left: 20%;
-    animation-delay: -15s;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="none"/><path d="M30 100 L370 100 L390 85 L400 100 L390 115 L370 100" stroke="%23667eea" stroke-width="6" fill="none"/><path d="M50 85 L50 115 M350 85 L350 115" stroke="%23667eea" stroke-width="4" fill="none"/><circle cx="80" cy="100" r="25" fill="%23222" stroke="%23667eea" stroke-width="3"/><circle cx="320" cy="100" r="25" fill="%23222" stroke="%23667eea" stroke-width="3"/><rect x="150" y="90" width="100" height="20" fill="%23667eea" opacity="0.9"/><rect x="140" y="85" width="120" height="30" fill="none" stroke="%23667eea" stroke-width="2" rx="5"/><circle cx="80" cy="100" r="8" fill="%23667eea"/><circle cx="320" cy="100" r="8" fill="%23667eea"/></svg>');
+    top: 75%;
+    left: 15%;
+    animation-delay: -9s;
 }
 
 @keyframes parallaxFloat {
-    0%, 100% {
-        transform: translateY(0px) translateX(0px) rotate(0deg);
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 20px rgba(225, 6, 0, 0.7));
     }
-    25% {
-        transform: translateY(-30px) translateX(20px) rotate(2deg);
+    15% {
+        transform: translateY(-80px) translateX(60px) rotate(8deg) scale(1.2);
+        filter: drop-shadow(0 0 35px rgba(225, 6, 0, 0.9));
     }
-    50% {
-        transform: translateY(-10px) translateX(-15px) rotate(-1deg);
+    30% {
+        transform: translateY(-40px) translateX(-50px) rotate(-6deg) scale(0.85);
+        filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.8));
+    }
+    45% {
+        transform: translateY(-100px) translateX(30px) rotate(12deg) scale(1.3);
+        filter: drop-shadow(0 0 40px rgba(255, 165, 0, 0.9));
+    }
+    60% {
+        transform: translateY(-20px) translateX(-80px) rotate(-10deg) scale(0.9);
+        filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.8));
     }
     75% {
-        transform: translateY(-40px) translateX(10px) rotate(1deg);
+        transform: translateY(-120px) translateX(40px) rotate(15deg) scale(1.25);
+        filter: drop-shadow(0 0 45px rgba(225, 6, 0, 1));
+    }
+    90% {
+        transform: translateY(-60px) translateX(-30px) rotate(-5deg) scale(0.95);
+        filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.7));
+    }
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 20px rgba(225, 6, 0, 0.7));
     }
 }
 
 @keyframes backgroundPulse {
-    0%, 100% {
-        opacity: 0.5;
+    0% {
+        opacity: 0.7;
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        opacity: 0.9;
+        transform: scale(1.03) rotate(0.5deg);
     }
     50% {
         opacity: 1;
+        transform: scale(1.05) rotate(0deg);
     }
-}
-
-@keyframes trackMove {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-@keyframes speedLines {
-    0% {
-        transform: translateX(-100%) translateY(-100%);
+    75% {
+        opacity: 0.9;
+        transform: scale(1.03) rotate(-0.5deg);
     }
     100% {
-        transform: translateX(100%) translateY(100%);
+        opacity: 0.7;
+        transform: scale(1) rotate(0deg);
     }
 }
 
@@ -351,10 +322,24 @@ h2 {
 
 @keyframes titleGlow {
     0% {
-        text-shadow: 0 0 20px rgba(225, 6, 0, 0.8);
+        text-shadow: 0 0 20px rgba(225, 6, 0, 0.8), 0 0 30px rgba(225, 6, 0, 0.4);
+        transform: scale(1);
+    }
+    25% {
+        text-shadow: 0 0 25px rgba(225, 6, 0, 0.9), 0 0 35px rgba(225, 6, 0, 0.6);
+        transform: scale(1.02);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(225, 6, 0, 1), 0 0 40px rgba(225, 6, 0, 0.8), 0 0 50px rgba(225, 6, 0, 0.3);
+        transform: scale(1.05);
+    }
+    75% {
+        text-shadow: 0 0 25px rgba(225, 6, 0, 0.9), 0 0 35px rgba(225, 6, 0, 0.6);
+        transform: scale(1.02);
     }
     100% {
-        text-shadow: 0 0 30px rgba(225, 6, 0, 1), 0 0 40px rgba(225, 6, 0, 0.5);
+        text-shadow: 0 0 20px rgba(225, 6, 0, 0.8), 0 0 30px rgba(225, 6, 0, 0.4);
+        transform: scale(1);
     }
 }
 
@@ -365,65 +350,6 @@ h2 {
     50% {
         opacity: 1;
     }
-}
-
-/* TEAM SECTION */
-.team-section {
-    background: rgba(21, 21, 30, 0.95);
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.team-list {
-    list-style: none;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.team-member {
-    padding: 32px 0;
-    font-size: 26px;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #fff;
-}
-
-.role {
-    font-size: 16px;
-    color: #e10600;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.team-member:hover {
-    padding-left: 20px;
-    color: #e10600;
-}
-
-.team-photo {
-    width: 60px;
-    height: 60px;
-    background: #e10600;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.3s ease;
-}
-
-.team-member:hover .team-photo {
-    opacity: 1;
-    transform: scale(1);
 }
 
 /* CHAMPIONS MARQUEE */
@@ -487,6 +413,62 @@ h2 {
     100% { transform: translateX(-100%); }
 }
 
+/* TEAM SECTION */
+.team-section {
+    background: rgba(21, 21, 30, 0.95);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.team-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.team-member {
+    padding: 32px 0;
+    font-size: 26px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.role {
+    font-size: 16px;
+    color: #e10600;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-member:hover {
+    padding-left: 20px;
+    color: #e10600;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+.team-member .role {
+    font-size: 14px;
+    color: #e10600;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
 /* ABOUT SECTION */
 .about-section {
     background: rgba(21, 21, 46, 0.95);
@@ -527,23 +509,16 @@ h2 {
 .person-photo {
     width: 80px;
     height: 80px;
-    background: rgba(225, 6, 0, 0.2);
-    color: #fff;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
     margin: 0 auto 20px;
-    transition: all 0.3s ease;
+    overflow: hidden;
     border: 2px solid rgba(225, 6, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .person-card:hover .person-photo {
-    background: rgba(225, 6, 0, 0.8);
-    transform: scale(1.1);
     border-color: #e10600;
+    transform: scale(1.05);
 }
 
 .person-card h3 {
@@ -608,38 +583,7 @@ h2 {
     font-weight: 400;
 }
 
-/* FLOATING ELEMENTS */
-.floating-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
 
-.float-item {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(225, 6, 0, 0.4);
-    border-radius: 50%;
-    animation: float 12s infinite ease-in-out;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(100vh) translateX(0px);
-        opacity: 0;
-    }
-    10%, 90% {
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-50px) translateX(20px);
-    }
-}
 
 /* Modern F1 Loader Styles */
 #f1-loader {
@@ -830,17 +774,28 @@ h2 {
     min-width: 200px;
     font-family: 'Inter', sans-serif;
     transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.driver-select:hover {
+    border-color: #ff4444;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .driver-select:focus {
     outline: none;
     border-color: #00d4ff;
     box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .driver-select option {
     background: #15151e;
     color: #fff;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .comparison-cards {
@@ -1066,7 +1021,7 @@ h2 {
     }
 }
 
-/* Image styles for team and person photos - ADD AT THE END */
+/* Image styles for person photos and team photos */
 .person-photo img,
 .team-photo img {
     width: 100%;
@@ -1103,33 +1058,36 @@ h2 {
     border: 4px solid #e10600;
 }
 
-.team-photo img {
+/* FLOATING ELEMENTS */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.float-item {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(225, 6, 0, 0.6);
     border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(225, 6, 0, 0.4);
 }
 
-.team-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    width: 100%;
-}
-.team-member .role {
-    font-size: 14px;
-    color: #e10600;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 4px;
-}
-
-.team-member {
-    padding: 32px 0;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+@keyframes float {
+    0%, 100% {
+        transform: translateY(100vh) translateX(0px);
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50px) translateX(30px);
+    }
 }

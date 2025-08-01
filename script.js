@@ -15,37 +15,7 @@ navMenu.addEventListener('click', (e) => {
     }
 });
 
-// FLOATING ELEMENTS FOR ABOUT SECTION
-function createFloatingElement() {
-    const element = document.createElement('div');
-    element.classList.add('float-item');
-    
-    // Random positioning and timing
-    element.style.left = Math.random() * 100 + '%';
-    element.style.animationDelay = Math.random() * 5 + 's';
-    element.style.animationDuration = (8 + Math.random() * 8) + 's';
-    
-    // Random colors for F1 theme
-    const colors = [
-        'rgba(225, 6, 0, 0.8)',    // F1 Red
-        'rgba(255, 255, 255, 0.8)', // White
-        'rgba(102, 126, 234, 0.8)', // Blue
-        'rgba(255, 215, 0, 0.8)'    // Gold
-    ];
-    element.style.background = colors[Math.floor(Math.random() * colors.length)];
-    
-    document.getElementById('floatingElements').appendChild(element);
-    
-    // Remove element after animation
-    setTimeout(() => {
-        if (element.parentNode) {
-            element.remove();
-        }
-    }, 16000);
-}
 
-// Create floating elements periodically
-setInterval(createFloatingElement, 2000);
 
 // SMOOTH SCROLLING FOR NAVIGATION
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -72,6 +42,38 @@ document.querySelectorAll('.champion-item').forEach(item => {
         item.style.transform = 'scale(1)';
     });
 });
+
+// FLOATING ELEMENTS FOR ABOUT SECTION
+function createFloatingElement() {
+    const element = document.createElement('div');
+    element.classList.add('float-item');
+    
+    // Random positioning and timing
+    element.style.left = Math.random() * 100 + '%';
+    element.style.animationDelay = Math.random() * 5 + 's';
+    element.style.animationDuration = (10 + Math.random() * 10) + 's';
+    
+    // Random colors for F1 theme
+    const colors = [
+        'rgba(225, 6, 0, 0.8)',    // F1 Red
+        'rgba(255, 255, 255, 0.8)', // White
+        'rgba(0, 212, 255, 0.8)',   // Cyan
+        'rgba(255, 165, 0, 0.8)'    // Orange
+    ];
+    element.style.background = colors[Math.floor(Math.random() * colors.length)];
+    
+    document.getElementById('floatingElements').appendChild(element);
+    
+    // Remove element after animation
+    setTimeout(() => {
+        if (element.parentNode) {
+            element.remove();
+        }
+    }, 20000);
+}
+
+// Create floating elements periodically
+setInterval(createFloatingElement, 1500);
 
 // QUIZ FUNCTIONALITY
 class F1Quiz {
@@ -269,6 +271,11 @@ class DriverComparison {
         const driver1Select = document.getElementById('driver1Select');
         const driver2Select = document.getElementById('driver2Select');
         
+        if (!driver1Select || !driver2Select) {
+            console.error('Driver select elements not found');
+            return;
+        }
+        
         driver1Select.addEventListener('change', () => {
             this.updateDriverCard(0, driver1Select.value);
         });
@@ -276,11 +283,15 @@ class DriverComparison {
         driver2Select.addEventListener('change', () => {
             this.updateDriverCard(1, driver2Select.value);
         });
+        
+        console.log('Driver comparison initialized successfully');
     }
     
     updateDriverCard(cardIndex, driverId) {
         const cards = document.querySelectorAll('.driver-card');
         const card = cards[cardIndex];
+        
+        console.log(`Updating card ${cardIndex} with driver ${driverId}`);
         
         if (!driverId || !this.driverData[driverId]) {
             // Reset card to default state
@@ -288,6 +299,7 @@ class DriverComparison {
             card.querySelector('.driver-name').textContent = 'Select a driver';
             const stats = card.querySelectorAll('.driver-stat-value');
             stats.forEach(stat => stat.textContent = '-');
+            console.log('Card reset to default state');
             return;
         }
         
@@ -300,22 +312,30 @@ class DriverComparison {
         stats[1].textContent = driver.wins;
         stats[2].textContent = driver.podiums;
         stats[3].textContent = '#' + driver.position;
+        
+        // Add visual feedback
+        card.style.transform = 'scale(1.02)';
+        setTimeout(() => {
+            card.style.transform = 'scale(1)';
+        }, 200);
+        
+        console.log(`Updated card with ${driver.name} - Points: ${driver.points}, Wins: ${driver.wins}, Podiums: ${driver.podiums}, Position: ${driver.position}`);
     }
 }
 
-// INITIALIZE FLOATING ELEMENTS ON PAGE LOAD
+// INITIALIZE ON PAGE LOAD
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize quiz and driver comparison
+    new F1Quiz();
+    new DriverComparison();
+    
     // Create initial floating elements
     for (let i = 0; i < 5; i++) {
         setTimeout(createFloatingElement, i * 1000);
     }
-    
-    // Initialize quiz and driver comparison
-    new F1Quiz();
-    new DriverComparison();
 });
 
 window.addEventListener('load', function() {
     const loader = document.getElementById('f1-loader');
     if (loader) loader.classList.add('hide');
-});
+}); 
