@@ -38,26 +38,7 @@ webathon1/
 └── .gitignore          # Git ignore file
 ```
 
-## 🚀 Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/dipesh07-ui/f1-racing-experience.git
-   cd f1-racing-experience
-   ```
-
-2. **Open in browser**
-   - Simply open `index.html` in your web browser
-   - Or use a local server for better development experience
-
-3. **For development**
-   ```bash
-   # Using Python (if installed)
-   python -m http.server 8000
-   
-   # Using Node.js (if installed)
-   npx serve .
-   ```
 
 ## 🎯 Key Sections
 
@@ -102,7 +83,7 @@ The website is fully responsive and works on:
 
 ## 🌐 Live Demo
 
-Visit the live website: [F1 Racing Experience](https://dipesh07-ui.github.io/f1-racing-experience)
+Visit the live website: [dipeshcodes.com/f1](https://dipesh07-ui.github.io/f1-racing-experience)
 
 ## 👥 Team
 
