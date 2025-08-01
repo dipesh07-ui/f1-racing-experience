@@ -794,3 +794,274 @@ h2 {
         min-width: 250px;
     }
 }
+
+/* Driver Comparison Section */
+.comparison-section {
+    background: linear-gradient(135deg, #15151e 0%, #0a0a0f 100%);
+    position: relative;
+}
+
+.comparison-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23e10600" fill-opacity="0.03"><circle cx="30" cy="30" r="2"/></g></g></svg>');
+    opacity: 0.5;
+}
+
+.driver-selector {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.driver-select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #e10600;
+    border-radius: 10px;
+    padding: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    min-width: 200px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.driver-select:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.driver-select option {
+    background: #15151e;
+    color: #fff;
+}
+
+.comparison-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.driver-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(225, 6, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.driver-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(225, 6, 0, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.driver-card:hover::before {
+    left: 100%;
+}
+
+.driver-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(225, 6, 0, 0.2);
+}
+
+.driver-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #e10600, #00d4ff);
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Orbitron', monospace;
+}
+
+.driver-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.driver-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.driver-stat {
+    text-align: center;
+}
+
+.driver-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e10600;
+    font-family: 'Orbitron', monospace;
+}
+
+.driver-stat-label {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+}
+
+/* Quiz Section */
+.quiz-section {
+    background: linear-gradient(135deg, #0a0a0f 0%, #15151e 100%);
+    position: relative;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.quiz-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 1px solid rgba(225, 6, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(225, 6, 0, 0.2);
+}
+
+.quiz-score {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #00d4ff;
+}
+
+.quiz-question {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.quiz-option {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.quiz-option:hover {
+    border-color: #e10600;
+    background: rgba(225, 6, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.quiz-option.selected {
+    border-color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    margin: 0 0.5rem;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #e10600, #ff1e00);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(225, 6, 0, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(225, 6, 0, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #00d4ff;
+}
+
+.btn-secondary:hover {
+    background: #00d4ff;
+    transform: translateY(-5px);
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .driver-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .driver-select {
+        min-width: 250px;
+    }
+    
+    .comparison-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-card {
+        padding: 2rem;
+    }
+    
+    .quiz-question {
+        font-size: 1.3rem;
+    }
+}

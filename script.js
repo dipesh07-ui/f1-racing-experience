@@ -73,12 +73,246 @@ document.querySelectorAll('.champion-item').forEach(item => {
     });
 });
 
+// QUIZ FUNCTIONALITY
+class F1Quiz {
+    constructor() {
+        this.currentQuestion = 0;
+        this.score = 0;
+        this.questions = [
+            {
+                question: "Which driver has won the most Formula 1 World Championships?",
+                options: ["Lewis Hamilton", "Michael Schumacher", "Max Verstappen", "Ayrton Senna"],
+                correct: 1
+            },
+            {
+                question: "Which team has won the most Constructors' Championships?",
+                options: ["Ferrari", "McLaren", "Mercedes", "Red Bull Racing"],
+                correct: 0
+            },
+            {
+                question: "What is the fastest F1 circuit on the current calendar?",
+                options: ["Monza", "Spa-Francorchamps", "Silverstone", "Baku"],
+                correct: 0
+            },
+            {
+                question: "Which driver holds the record for most Grand Prix wins?",
+                options: ["Michael Schumacher", "Lewis Hamilton", "Max Verstappen", "Sebastian Vettel"],
+                correct: 1
+            },
+            {
+                question: "In which year was the first Formula 1 World Championship held?",
+                options: ["1948", "1950", "1952", "1955"],
+                correct: 1
+            }
+        ];
+        
+        this.init();
+    }
+    
+    init() {
+        this.setupQuiz();
+        this.loadQuestion();
+    }
+    
+    setupQuiz() {
+        const options = document.querySelectorAll('.quiz-option');
+        const nextButton = document.getElementById('nextQuestion');
+        const restartButton = document.getElementById('restartQuiz');
+        
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove previous selections
+                options.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selection to clicked option
+                option.classList.add('selected');
+                
+                // Check answer
+                const isCorrect = parseInt(option.dataset.answer) === 1;
+                if (isCorrect) {
+                    this.score++;
+                    this.updateScore();
+                }
+                
+                // Show next button
+                nextButton.style.display = 'inline-block';
+            });
+        });
+        
+        nextButton.addEventListener('click', () => {
+            this.nextQuestion();
+        });
+        
+        restartButton.addEventListener('click', () => {
+            this.restartQuiz();
+        });
+    }
+    
+    loadQuestion() {
+        const question = this.questions[this.currentQuestion];
+        const questionElement = document.getElementById('quizQuestion');
+        const optionsContainer = document.getElementById('quizOptions');
+        const nextButton = document.getElementById('nextQuestion');
+        
+        questionElement.textContent = question.question;
+        
+        const options = optionsContainer.querySelectorAll('.quiz-option');
+        options.forEach((option, index) => {
+            option.textContent = question.options[index];
+            option.dataset.answer = index === question.correct ? '1' : '0';
+            option.classList.remove('selected');
+        });
+        
+        nextButton.style.display = 'none';
+    }
+    
+    nextQuestion() {
+        this.currentQuestion++;
+        
+        if (this.currentQuestion >= this.questions.length) {
+            this.endQuiz();
+            return;
+        }
+        
+        this.loadQuestion();
+    }
+    
+    updateScore() {
+        document.getElementById('quizScore').textContent = this.score;
+    }
+    
+    endQuiz() {
+        const questionElement = document.getElementById('quizQuestion');
+        const optionsContainer = document.getElementById('quizOptions');
+        const nextButton = document.getElementById('nextQuestion');
+        const restartButton = document.getElementById('restartQuiz');
+        
+        questionElement.textContent = `Quiz Complete! Your final score: ${this.score}/${this.questions.length}`;
+        optionsContainer.style.display = 'none';
+        nextButton.style.display = 'none';
+        restartButton.style.display = 'inline-block';
+    }
+    
+    restartQuiz() {
+        this.currentQuestion = 0;
+        this.score = 0;
+        this.updateScore();
+        
+        const optionsContainer = document.getElementById('quizOptions');
+        const restartButton = document.getElementById('restartQuiz');
+        
+        optionsContainer.style.display = 'grid';
+        restartButton.style.display = 'none';
+        
+        this.loadQuestion();
+    }
+}
+
+// DRIVER COMPARISON FUNCTIONALITY
+class DriverComparison {
+    constructor() {
+        this.driverData = {
+            verstappen: {
+                name: "Max Verstappen",
+                avatar: "MV",
+                points: 575,
+                wins: 15,
+                podiums: 18,
+                position: 1
+            },
+            hamilton: {
+                name: "Lewis Hamilton",
+                avatar: "LH",
+                points: 234,
+                wins: 2,
+                podiums: 8,
+                position: 4
+            },
+            leclerc: {
+                name: "Charles Leclerc",
+                avatar: "CL",
+                points: 356,
+                wins: 3,
+                podiums: 12,
+                position: 2
+            },
+            russell: {
+                name: "George Russell",
+                avatar: "GR",
+                points: 287,
+                wins: 1,
+                podiums: 6,
+                position: 3
+            },
+            norris: {
+                name: "Lando Norris",
+                avatar: "LN",
+                points: 205,
+                wins: 0,
+                podiums: 5,
+                position: 5
+            },
+            piastri: {
+                name: "Oscar Piastri",
+                avatar: "OP",
+                points: 164,
+                wins: 0,
+                podiums: 3,
+                position: 6
+            }
+        };
+        
+        this.init();
+    }
+    
+    init() {
+        const driver1Select = document.getElementById('driver1Select');
+        const driver2Select = document.getElementById('driver2Select');
+        
+        driver1Select.addEventListener('change', () => {
+            this.updateDriverCard(0, driver1Select.value);
+        });
+        
+        driver2Select.addEventListener('change', () => {
+            this.updateDriverCard(1, driver2Select.value);
+        });
+    }
+    
+    updateDriverCard(cardIndex, driverId) {
+        const cards = document.querySelectorAll('.driver-card');
+        const card = cards[cardIndex];
+        
+        if (!driverId || !this.driverData[driverId]) {
+            // Reset card to default state
+            card.querySelector('.driver-avatar').textContent = '?';
+            card.querySelector('.driver-name').textContent = 'Select a driver';
+            const stats = card.querySelectorAll('.driver-stat-value');
+            stats.forEach(stat => stat.textContent = '-');
+            return;
+        }
+        
+        const driver = this.driverData[driverId];
+        card.querySelector('.driver-avatar').textContent = driver.avatar;
+        card.querySelector('.driver-name').textContent = driver.name;
+        
+        const stats = card.querySelectorAll('.driver-stat-value');
+        stats[0].textContent = driver.points;
+        stats[1].textContent = driver.wins;
+        stats[2].textContent = driver.podiums;
+        stats[3].textContent = '#' + driver.position;
+    }
+}
+
 // INITIALIZE FLOATING ELEMENTS ON PAGE LOAD
 document.addEventListener('DOMContentLoaded', () => {
     // Create initial floating elements
     for (let i = 0; i < 5; i++) {
         setTimeout(createFloatingElement, i * 1000);
     }
+    
+    // Initialize quiz and driver comparison
+    new F1Quiz();
+    new DriverComparison();
 });
 
 window.addEventListener('load', function() {

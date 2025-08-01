@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,6 +33,8 @@
         <div class="nav-menu" id="navMenu">
             <a href="#home">Home</a>
             <a href="#champions">Champions</a>
+            <a href="#comparison">Compare Drivers</a>
+            <a href="#quiz">F1 Quiz</a>
             <a href="#team">Our Team</a>
             <a href="#about">About</a>
         </div>
@@ -116,6 +119,102 @@
                         <h3>Fernando Alonso</h3>
                         <p>2x World Champion</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DRIVER COMPARISON SECTION -->
+    <section class="section comparison-section" id="comparison">
+        <div class="container">
+            <h2>Driver Comparison</h2>
+            <div class="driver-selector">
+                <select class="driver-select" id="driver1Select">
+                    <option value="">Select Driver 1</option>
+                    <option value="verstappen">Max Verstappen</option>
+                    <option value="hamilton">Lewis Hamilton</option>
+                    <option value="leclerc">Charles Leclerc</option>
+                    <option value="russell">George Russell</option>
+                    <option value="norris">Lando Norris</option>
+                    <option value="piastri">Oscar Piastri</option>
+                </select>
+                <select class="driver-select" id="driver2Select">
+                    <option value="">Select Driver 2</option>
+                    <option value="verstappen">Max Verstappen</option>
+                    <option value="hamilton">Lewis Hamilton</option>
+                    <option value="leclerc">Charles Leclerc</option>
+                    <option value="russell">George Russell</option>
+                    <option value="norris">Lando Norris</option>
+                    <option value="piastri">Oscar Piastri</option>
+                </select>
+            </div>
+            <div class="comparison-cards" id="comparisonCards">
+                <div class="driver-card">
+                    <div class="driver-avatar">?</div>
+                    <div class="driver-name">Select a driver</div>
+                    <div class="driver-stats">
+                        <div class="driver-stat">
+                            <div class="driver-stat-value">-</div>
+                            <div class="driver-stat-label">Points</div>
+                        </div>
+                        <div class="driver-stat">
+                            <div class="driver-stat-value">-</div>
+                            <div class="driver-stat-label">Wins</div>
+                        </div>
+                        <div class="driver-stat">
+                            <div class="driver-stat-value">-</div>
+                            <div class="driver-stat-label">Podiums</div>
+                        </div>
+                        <div class="driver-stat">
+                            <div class="driver-stat-value">-</div>
+                            <div class="driver-stat-label">Position</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="driver-card">
+                    <div class="driver-avatar">?</div>
+                    <div class="driver-name">Select a driver</div>
+                    <div class="driver-stats">
+                        <div class="driver-stat">
+                            <div class="driver-stat-value">-</div>
+                            <div class="driver-stat-label">Points</div>
+                        </div>
+                        <div class="driver-stat">
+                            <div class="driver-stat-value">-</div>
+                            <div class="driver-stat-label">Wins</div>
+                        </div>
+                        <div class="driver-stat">
+                            <div class="driver-stat-value">-</div>
+                            <div class="driver-stat-label">Podiums</div>
+                        </div>
+                        <div class="driver-stat">
+                            <div class="driver-stat-value">-</div>
+                            <div class="driver-stat-label">Position</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- F1 QUIZ SECTION -->
+    <section class="section quiz-section" id="quiz">
+        <div class="container">
+            <h2>F1 Knowledge Quiz</h2>
+            <div class="quiz-container">
+                <div class="quiz-card">
+                    <div class="quiz-score">Score: <span id="quizScore">0</span>/5</div>
+                    <div class="quiz-question" id="quizQuestion">
+                        Which driver has won the most Formula 1 World Championships?
+                    </div>
+                    <div class="quiz-options" id="quizOptions">
+                        <div class="quiz-option" data-answer="0">Lewis Hamilton</div>
+                        <div class="quiz-option" data-answer="1">Michael Schumacher</div>
+                        <div class="quiz-option" data-answer="0">Max Verstappen</div>
+                        <div class="quiz-option" data-answer="0">Ayrton Senna</div>
+                    </div>
+                    <button class="btn btn-primary" id="nextQuestion" style="display: none;">Next Question</button>
+                    <button class="btn btn-secondary" id="restartQuiz" style="display: none;">Restart Quiz</button>
                 </div>
             </div>
         </div>
