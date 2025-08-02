@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
     line-height: 1.6;
     color: #fff;
     background: #15151e;
@@ -34,11 +34,12 @@ body {
 
 .logo {
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 900;
     color: #e10600;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     transition: all 0.3s ease;
     font-family: 'Orbitron', 'Arial Black', Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 .logo:hover {
@@ -113,6 +114,9 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    font-family: 'Rajdhani', 'Orbitron', 'Arial Black', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nav-menu a::before {
@@ -160,8 +164,9 @@ h1 {
     margin-bottom: 24px;
     color: #e10600;
     text-align: center;
-    font-family: 'Orbitron', 'Arial Black', Arial, sans-serif;
+    font-family: 'Rajdhani', 'Orbitron', 'Arial Black', Arial, sans-serif;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -171,6 +176,8 @@ h2 {
     text-align: center;
     color: #fff;
     letter-spacing: 1px;
+    font-family: 'Rajdhani', 'Orbitron', 'Arial Black', Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 .subtitle {
@@ -181,6 +188,9 @@ h2 {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.8;
+    font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 /* HOME WITH ULTRA-MODERN F1 RACING BACKGROUND */
@@ -373,6 +383,8 @@ h2 {
     margin-bottom: 8px;
     color: #fff;
     letter-spacing: 0.5px;
+    font-family: 'Rajdhani', 'Orbitron', 'Arial Black', Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 .champion-info p {
@@ -380,6 +392,9 @@ h2 {
     font-weight: 400;
     color: #ccc;
     letter-spacing: 0.5px;
+    font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
 @keyframes scroll {
@@ -441,6 +456,8 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 4px;
+    font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-weight: 400;
 }
 
 /* ABOUT SECTION */
@@ -514,6 +531,8 @@ h2 {
     margin-bottom: 12px;
     color: #fff;
     letter-spacing: 0.5px;
+    font-family: 'Rajdhani', 'Orbitron', 'Arial Black', Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 .person-card p {
@@ -524,6 +543,8 @@ h2 {
     color: #e10600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-weight: 400;
 }
 
 .social-links {
@@ -733,6 +754,32 @@ h2 {
         gap: 30px;
     }
     
+    .person-card {
+        padding: 30px 20px;
+    }
+    
+    .person-card h3 {
+        font-size: 22px;
+    }
+    
+    .person-card p {
+        font-size: 14px;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .social-link {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
     .champion-item {
         min-width: 250px;
     }
@@ -852,11 +899,13 @@ h2 {
 }
 
 .driver-name {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Rajdhani', 'Orbitron', monospace;
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .driver-stats {
@@ -874,13 +923,18 @@ h2 {
     font-size: 1.5rem;
     font-weight: 700;
     color: #e10600;
-    font-family: 'Orbitron', monospace;
+    font-family: 'Rajdhani', 'Orbitron', monospace;
+    letter-spacing: 0.5px;
 }
 
 .driver-stat-label {
     font-size: 0.9rem;
     color: #ccc;
     margin-top: 0.5rem;
+    font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Quiz Section */
@@ -912,7 +966,7 @@ h2 {
 }
 
 .quiz-score {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Rajdhani', 'Orbitron', monospace;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #00d4ff;
@@ -921,6 +975,8 @@ h2 {
     border-radius: 25px;
     border: 1px solid rgba(0, 212, 255, 0.3);
     display: inline-block;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .quiz-question {
@@ -932,6 +988,9 @@ h2 {
     padding: 20px;
     border-radius: 15px;
     border-left: 4px solid #e10600;
+    font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.3px;
 }
 
 .quiz-options {
@@ -987,8 +1046,10 @@ h2 {
     position: relative;
     overflow: hidden;
     font-size: 1rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Rajdhani', 'Orbitron', 'Arial Black', Arial, sans-serif;
     margin: 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-primary {
