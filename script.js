@@ -1,4 +1,6 @@
+// ========================================
 // NAVBAR FUNCTIONALITY
+// ========================================
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 
@@ -15,9 +17,9 @@ navMenu.addEventListener('click', (e) => {
     }
 });
 
-
-
+// ========================================
 // SMOOTH SCROLLING FOR NAVIGATION
+// ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -31,7 +33,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ADD SOME INTERACTIVE HOVER EFFECTS
+// ========================================
+// INTERACTIVE HOVER EFFECTS
+// ========================================
 document.querySelectorAll('.champion-item').forEach(item => {
     item.addEventListener('mouseenter', () => {
         item.style.transform = 'scale(1.05)';
@@ -43,7 +47,9 @@ document.querySelectorAll('.champion-item').forEach(item => {
     });
 });
 
+// ========================================
 // FLOATING ELEMENTS FOR ABOUT SECTION
+// ========================================
 function createFloatingElement() {
     const element = document.createElement('div');
     element.classList.add('float-item');
@@ -75,7 +81,9 @@ function createFloatingElement() {
 // Create floating elements periodically
 setInterval(createFloatingElement, 1500);
 
+// ========================================
 // QUIZ FUNCTIONALITY
+// ========================================
 class F1Quiz {
     constructor() {
         this.currentQuestion = 0;
@@ -105,6 +113,31 @@ class F1Quiz {
                 question: "In which year was the first Formula 1 World Championship held?",
                 options: ["1948", "1950", "1952", "1955"],
                 correct: 1
+            },
+            {
+                question: "Which driver is known as 'The Flying Finn'?",
+                options: ["Kimi Räikkönen", "Mika Häkkinen", "Valtteri Bottas", "Heikki Kovalainen"],
+                correct: 0
+            },
+            {
+                question: "What is the nickname of the Monaco Grand Prix?",
+                options: ["The Jewel in the Crown", "The Crown Jewel", "The Prince's Race", "The Million Dollar Race"],
+                correct: 0
+            },
+            {
+                question: "Which team has the most consecutive Constructors' Championships?",
+                options: ["Ferrari", "McLaren", "Mercedes", "Red Bull Racing"],
+                correct: 2
+            },
+            {
+                question: "What is the maximum number of points a driver can score in a single race?",
+                options: ["25", "26", "27", "28"],
+                correct: 1
+            },
+            {
+                question: "Which circuit is known as 'The Cathedral of Speed'?",
+                options: ["Monza", "Spa-Francorchamps", "Silverstone", "Nürburgring"],
+                correct: 0
             }
         ];
         
@@ -124,17 +157,31 @@ class F1Quiz {
         options.forEach(option => {
             option.addEventListener('click', () => {
                 // Remove previous selections
-                options.forEach(opt => opt.classList.remove('selected'));
+                options.forEach(opt => {
+                    opt.classList.remove('selected', 'correct', 'incorrect');
+                });
                 
                 // Add selection to clicked option
                 option.classList.add('selected');
                 
-                // Check answer
+                // Check answer and provide visual feedback
                 const isCorrect = parseInt(option.dataset.answer) === 1;
                 if (isCorrect) {
                     this.score++;
                     this.updateScore();
+                    option.classList.add('correct');
+                } else {
+                    option.classList.add('incorrect');
+                    // Highlight correct answer
+                    options.forEach(opt => {
+                        if (parseInt(opt.dataset.answer) === 1) {
+                            opt.classList.add('correct');
+                        }
+                    });
                 }
+                
+                // Disable all options after selection
+                options.forEach(opt => opt.style.pointerEvents = 'none');
                 
                 // Show next button
                 nextButton.style.display = 'inline-block';
@@ -156,13 +203,14 @@ class F1Quiz {
         const optionsContainer = document.getElementById('quizOptions');
         const nextButton = document.getElementById('nextQuestion');
         
-        questionElement.textContent = question.question;
+        questionElement.textContent = `Question ${this.currentQuestion + 1} of ${this.questions.length}: ${question.question}`;
         
         const options = optionsContainer.querySelectorAll('.quiz-option');
         options.forEach((option, index) => {
             option.textContent = question.options[index];
             option.dataset.answer = index === question.correct ? '1' : '0';
-            option.classList.remove('selected');
+            option.classList.remove('selected', 'correct', 'incorrect');
+            option.style.pointerEvents = 'auto';
         });
         
         nextButton.style.display = 'none';
@@ -189,7 +237,20 @@ class F1Quiz {
         const nextButton = document.getElementById('nextQuestion');
         const restartButton = document.getElementById('restartQuiz');
         
-        questionElement.textContent = `Quiz Complete! Your final score: ${this.score}/${this.questions.length}`;
+        const percentage = Math.round((this.score / this.questions.length) * 100);
+        let message = `Quiz Complete! Your final score: ${this.score}/${this.questions.length} (${percentage}%)`;
+        
+        if (percentage >= 90) {
+            message += " - Excellent! You're an F1 expert! 🏆";
+        } else if (percentage >= 70) {
+            message += " - Great job! You know your F1! 🏁";
+        } else if (percentage >= 50) {
+            message += " - Good effort! Keep learning! 📚";
+        } else {
+            message += " - Keep studying F1 history! 📖";
+        }
+        
+        questionElement.textContent = message;
         optionsContainer.style.display = 'none';
         nextButton.style.display = 'none';
         restartButton.style.display = 'inline-block';
@@ -210,7 +271,9 @@ class F1Quiz {
     }
 }
 
+// ========================================
 // DRIVER COMPARISON FUNCTIONALITY
+// ========================================
 class DriverComparison {
     constructor() {
         this.driverData = {
@@ -283,15 +346,11 @@ class DriverComparison {
         driver2Select.addEventListener('change', () => {
             this.updateDriverCard(1, driver2Select.value);
         });
-        
-        console.log('Driver comparison initialized successfully');
     }
     
     updateDriverCard(cardIndex, driverId) {
         const cards = document.querySelectorAll('.driver-card');
         const card = cards[cardIndex];
-        
-        console.log(`Updating card ${cardIndex} with driver ${driverId}`);
         
         if (!driverId || !this.driverData[driverId]) {
             // Reset card to default state
@@ -299,7 +358,6 @@ class DriverComparison {
             card.querySelector('.driver-name').textContent = 'Select a driver';
             const stats = card.querySelectorAll('.driver-stat-value');
             stats.forEach(stat => stat.textContent = '-');
-            console.log('Card reset to default state');
             return;
         }
         
@@ -318,12 +376,12 @@ class DriverComparison {
         setTimeout(() => {
             card.style.transform = 'scale(1)';
         }, 200);
-        
-        console.log(`Updated card with ${driver.name} - Points: ${driver.points}, Wins: ${driver.wins}, Podiums: ${driver.podiums}, Position: ${driver.position}`);
     }
 }
 
+// ========================================
 // INITIALIZE ON PAGE LOAD
+// ========================================
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize quiz and driver comparison
     new F1Quiz();

@@ -1,16 +1,18 @@
 # 🏁 F1 Racing Experience
 
-A modern, interactive Formula 1 racing website with dynamic animations and sleek design.
+A modern, interactive Formula 1 racing website with dynamic animations, interactive quiz, and driver comparison features.
 
 ## 🚀 Features
 
 - **Modern F1 Loading Screen** - Animated racing car and flag
 - **Dynamic Racing Background** - Multi-layered animations with speed lines and track effects
-- **Responsive Design** - Works perfectly on all devices
-- **Interactive Navigation** - Smooth hamburger menu with hover effects
+- **Interactive F1 Quiz** - 10 questions with real-time feedback and scoring
+- **Driver Comparison Tool** - Compare current F1 drivers with detailed statistics
 - **Champions Marquee** - Scrolling display of F1 World Champions
 - **Team Section** - Showcase team members with hover animations
-- **About Section** - Professional team cards with social links
+- **About Section** - Professional team cards with social media links
+- **Responsive Design** - Works perfectly on all devices
+- **Smooth Navigation** - Hamburger menu with hover effects
 
 ## 🎨 Design Highlights
 
@@ -18,14 +20,16 @@ A modern, interactive Formula 1 racing website with dynamic animations and sleek
 - **F1 Color Scheme** - Red (#e10600) and dark theme
 - **Smooth Animations** - CSS keyframes for dynamic effects
 - **Glass Morphism** - Backdrop blur effects and transparency
-- **Hover Effects** - Interactive elements with smooth transitions
+- **Interactive Elements** - Hover effects and smooth transitions
+- **Quiz Feedback** - Visual feedback for correct/incorrect answers
 
 ## 🛠️ Technologies Used
 
 - **HTML5** - Semantic markup
-- **CSS3** - Modern styling with animations
-- **JavaScript** - Interactive functionality
+- **CSS3** - Modern styling with animations and responsive design
+- **JavaScript** - Interactive functionality and quiz logic
 - **Google Fonts** - Inter and Orbitron typography
+- **Font Awesome** - Icons for social media links
 
 ## 📁 Project Structure
 
@@ -35,10 +39,11 @@ webathon1/
 ├── style.css           # All CSS styles and animations
 ├── script.js           # JavaScript functionality
 ├── README.md           # Project documentation
-└── .gitignore          # Git ignore file
+├── .gitignore          # Git ignore file
+└── image/              # Team member photos
+    ├── anuj.jpg
+    └── dipesh.jpg
 ```
-
-
 
 ## 🎯 Key Sections
 
@@ -46,6 +51,18 @@ webathon1/
 - Dynamic racing background with animated cars
 - Pulsing light effects and speed lines
 - Glowing title animations
+
+### F1 Quiz Section
+- 10 interactive questions about F1
+- Real-time scoring and feedback
+- Visual indicators for correct/incorrect answers
+- Final score with percentage and motivational messages
+
+### Driver Comparison Section
+- Compare current F1 drivers
+- Detailed statistics (Points, Wins, Podiums, Position)
+- Interactive selection dropdowns
+- Visual driver cards with hover effects
 
 ### Champions Section
 - Horizontal scrolling marquee
@@ -59,7 +76,7 @@ webathon1/
 
 ### About Section
 - Professional team cards
-- Social media links
+- Social media links (GitHub, LinkedIn, Instagram)
 - Floating background elements
 
 ## 🎨 Customization
@@ -69,6 +86,7 @@ webathon1/
 - Background: `#15151e`
 - Text: `#fff`
 - Accent: `#ccc`
+- Quiz Feedback: `#00ff88` (correct), `#ff4444` (incorrect)
 
 ### Fonts
 - Headings: Orbitron (Google Fonts)
@@ -83,7 +101,7 @@ The website is fully responsive and works on:
 
 ## 🌐 Live Demo
 
-Visit the live website: [dipeshcodes.com/f1](https://dipesh07-ui.github.io/f1-racing-experience)
+Visit the live website: [F1 Racing Experience](https://dipesh07-ui.github.io/f1-racing-experience)
 
 ## 👥 Team
 
@@ -94,6 +112,7 @@ Visit the live website: [dipeshcodes.com/f1](https://dipesh07-ui.github.io/f1-ra
 
 - Email: guptadipesh776@gmail.com
 - GitHub: [dipesh07-ui](https://github.com/dipesh07-ui)
+- Instagram: [_dipesh_97](https://www.instagram.com/accounts/login/?next=%2F_dipesh_97%2F&source=omni_redirect)
 
 ## 📄 License
 
